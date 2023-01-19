@@ -15,5 +15,6 @@ Config/testthat/edition: 3
 Imports: 
     clipr,
     stringr
-URL: https://github.com/Shitao5/stfun
+URL: https://github.com/Shitao5/stfun,
+    https://shitao5.github.io/stfun/
 BugReports: https://github.com/Shitao5/stfun/issues
