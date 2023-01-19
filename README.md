@@ -4,6 +4,8 @@
 # stfun <img src='man/figures/logo.png' align="right" height="139" />
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Shitao5/stfun/actions/workflows/check-full.yaml/badge.svg)](https://github.com/Shitao5/stfun/actions/workflows/check-full.yaml)
 <!-- badges: end -->
 
 There are many tedious things that come up in everyday life, and I have
