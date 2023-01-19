@@ -1,0 +1,5 @@
+^stfun\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+pkgdown/
+^README\.Rmd$
