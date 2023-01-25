@@ -14,7 +14,14 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     clipr,
-    stringr
+    dplyr,
+    lubridate,
+    rlang,
+    stringr,
+    tidyr
 URL: https://github.com/Shitao5/stfun,
     https://shitao5.github.io/stfun/
 BugReports: https://github.com/Shitao5/stfun/issues
+Depends: 
+    R (>= 2.10)
+LazyData: true
