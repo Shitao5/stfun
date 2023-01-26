@@ -29,13 +29,13 @@ kindle_read <- function(file) {
   dplyr::mutate(page = stringr::str_extract(.data$info, "(?<=\\u7b2c )\\d+"),
                 begin = stringr::str_extract(.data$info, "(?<=#)\\d+"),
                 end = stringr::str_extract(.data$info, "(?<=\\-)\\d+"),
-                datetime = stringr::str_extract(.data$info, "(?<= )\\d+\\u5e74.*:\\d{2}")
-                    %>% lubridate::as_datetime(),
+                datetime = stringr::str_extract(.data$info, "(?<= )\\d+\\u5e74.*:\\d{2}"),
+                datetime = ifelse(stringr::str_detect(.data$datetime, "\\u4e0a\\u5348"),
+                                  stringr::str_c(.data$datetime, " AM"),
+                                  stringr::str_c(.data$datetime, " PM")) %>%
+                           stringr::str_remove("\\u661f\\u671f.{1} .{2}") %>%
+                           lubridate::as_datetime(),
                 id = dplyr::row_number()) %>%
-  dplyr::select(.data$id, .data$page, .data$begin, .data$end,
-                .data$datetime, .data$title, .data$text)
+  dplyr::select(.data$id, .data$title, .data$page, .data$begin,
+                .data$end, .data$datetime, .data$text)
 }
-
-
-
-

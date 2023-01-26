@@ -1,10 +1,10 @@
-﻿Eloquent JavaScript (Marijn Haverbeke)
-- 您在第 78 页（位置 #1195-1195）的标注 | 添加于 2022年10月31日星期一 上午12:43:51
+Eloquent JavaScript (Marijn Haverbeke)
+- 您在第 78 页（位置 #1195-1195）的标注 | 添加于 2022年10月31日星期一 上午12:53:30
 
 The standard JavaScript functions, and most JavaScript programmers, follow the bottom style—they capitalize every word except the first.
 ==========
 Eloquent JavaScript (Marijn Haverbeke)
-- 您在第 82 页（位置 #1257-1258）的标注 | 添加于 2022年10月31日星期一 上午6:53:30
+- 您在第 82 页（位置 #1257-1258）的标注 | 添加于 2022年10月31日星期一 下午11:43:51
 
-defining new vocabulary. Creating new words in prose
+Creating new words in prose。
 ==========
