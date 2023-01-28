@@ -2,10 +2,10 @@
 #'
 #' @param file The path to `My Clippings.txt`, generally in `Kindle/Documents/`
 #'
-#' @return
+#' @return A [tibble][tibble::tibble-package].
 #' @export
 #'
-#' @examples
+#' @examples kindle_read(test_path("My-Clippings.txt"))
 #' @importFrom rlang .data
 #' @importFrom dplyr %>%
 kindle_read <- function(file) {

@@ -18,7 +18,8 @@ Imports:
     lubridate,
     rlang,
     stringr,
-    tidyr
+    tidyr,
+    writexl
 URL: https://github.com/Shitao5/stfun,
     https://shitao5.github.io/stfun/
 BugReports: https://github.com/Shitao5/stfun/issues

@@ -9,6 +9,12 @@ kindle_read(file)
 \arguments{
 \item{file}{The path to \verb{My Clippings.txt}, generally in \verb{Kindle/Documents/}}
 }
+\value{
+A \link[tibble:tibble-package]{tibble}.
+}
 \description{
 Read \verb{My Clippings.txt} from Kindle and clean it into tidy data
+}
+\examples{
+kindle_read(test_path("My-Clippings.txt"))
 }
