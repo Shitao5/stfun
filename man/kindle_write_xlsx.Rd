@@ -16,7 +16,7 @@ kindle_write_xlsx(
 \arguments{
 \item{data}{The data read from \code{\link[=kindle_read]{kindle_read()}}.}
 
-\item{file}{A file name to write to.}
+\item{file}{The file name to write to.}
 
 \item{columns}{A character vector. Select and reorder variables in a data frame. Choose from the following values:
 \itemize{
@@ -24,7 +24,7 @@ kindle_write_xlsx(
 \item \code{title}: Name of the book.
 \item \code{page}: The number of page of the excerpt in the book.
 \item \code{begin}: The starting position of the excerpt in the book.
-\item \code{end}: The end position of the excerpt in the book.
+\item \code{end}: The ending position of the excerpt in the book.
 \item \code{datetime}: The time when the excerpt is took down.
 \item \code{text}: Excerpted content.
 }}
@@ -36,7 +36,7 @@ value will be retained; if \code{FALSE}, no records will be deleted.}
 no records will be deleted.}
 
 \item{title}{String. Provide the \code{title} of the \code{data} you want to write out,
-with support for regular expressions. If \code{NULL}, all of records will be writed out.}
+with support for regular expressions. If \code{NULL}, all of records will be wrote out.}
 }
 \value{
 A excel file.

@@ -16,6 +16,7 @@ Imports:
     clipr,
     dplyr,
     lubridate,
+    readr,
     rlang,
     stringr,
     tidyr,
