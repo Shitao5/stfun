@@ -16,5 +16,7 @@ A \link[tibble:tibble-package]{tibble}.
 Read \verb{My Clippings.txt} from Kindle and clean it into tidy data
 }
 \examples{
-kindle_read(test_path("My-Clippings.txt"))
+\dontrun{
+kindle_read("tests/testthat/My-Clippings.txt")
+}
 }

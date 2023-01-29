@@ -5,7 +5,10 @@
 #' @return A [tibble][tibble::tibble-package].
 #' @export
 #'
-#' @examples kindle_read(test_path("My-Clippings.txt"))
+#' @examples
+#' \dontrun{
+#' kindle_read("tests/testthat/My-Clippings.txt")
+#' }
 #' @importFrom rlang .data
 #' @importFrom dplyr %>%
 kindle_read <- function(file) {

@@ -22,8 +22,10 @@
 #' @return A excel file.
 #'
 #' @examples
-#' text <- kindle_read(test_path("My-Clippings.txt"))
-#' kindle_write_xlsx(text, "file.xlsx")
+#' \dontrun{
+#' text <- kindle_read("tests/testthat/My-Clippings.txt")
+#' kindle_write_xlsx(text, "tests/testthat/kindle_write.xlsx")
+#' }
 #'
 #' @importFrom rlang .data
 #' @importFrom dplyr %>%
