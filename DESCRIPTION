@@ -18,6 +18,7 @@ Imports:
     lubridate,
     readr,
     rlang,
+    stringi,
     stringr,
     tidyr,
     writexl

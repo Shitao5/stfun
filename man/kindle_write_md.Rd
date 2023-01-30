@@ -10,6 +10,7 @@ kindle_write_md(
   title = NULL,
   distinct = TRUE,
   drop_na = TRUE,
+  new_line = TRUE,
   time = TRUE
 )
 }
@@ -26,6 +27,9 @@ value will be retained; if \code{FALSE}, no records will be deleted.}
 
 \item{drop_na}{Logical. If \code{TRUE}, drop rows where \code{text} column is \code{NA}; if \code{FALSE},
 no records will be deleted.}
+
+\item{new_line}{Logical. If \code{TRUE}, \verb{ } will be replaced by \verb{\\n} which can create
+a new line.}
 
 \item{time}{Logical. If \code{TRUE}, the \code{datetime} will be add to the end of \code{text}.}
 }

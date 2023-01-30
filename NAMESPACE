@@ -2,6 +2,8 @@
 
 export(blog_name)
 export(kindle_read)
+export(kindle_write_md)
+export(kindle_write_xlsx)
 export(remove_tag)
 importFrom(dplyr,"%>%")
 importFrom(rlang,.data)

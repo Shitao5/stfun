@@ -20,6 +20,7 @@
 #'  no records will be deleted.
 #'
 #' @return A excel file.
+#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -73,9 +74,12 @@ kindle_write_xlsx <- function(data, file, columns = NULL,
 #'  value will be retained; if `FALSE`, no records will be deleted.
 #' @param drop_na Logical. If `TRUE`, drop rows where `text` column is `NA`; if `FALSE`,
 #'  no records will be deleted.
+#' @param new_line Logical. If `TRUE`, ` ` will be replaced by `\n` which can create
+#' a new line.
 #' @param time Logical. If `TRUE`, the `datetime` will be add to the end of `text`.
 #'
 #' @return A Markdown file.
+#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -84,6 +88,7 @@ kindle_write_xlsx <- function(data, file, columns = NULL,
 kindle_write_md <- function(data, file, title = NULL,
                               distinct = TRUE,
                               drop_na = TRUE,
+                              new_line = TRUE,
                               time = TRUE) {
 
   if (!is.null(title)) {
@@ -106,10 +111,17 @@ kindle_write_md <- function(data, file, title = NULL,
       dplyr::mutate(id = dplyr::row_number())
   }
 
+  if (new_line == TRUE) {
+    data <- data %>%
+      dplyr::mutate(text = stringr::str_replace_all(.data$text, " ", "\n"))
+  }
+
   if (time == TRUE) {
     data <- data %>%
       dplyr::mutate(text = stringr::str_c(.data$text, " \\uff08", .data$datetime, "\\uff09"))
   }
 
-  readr::write_lines(data$text, file = file, sep = "\n\n")
+  readr::write_lines(stringi::stri_unescape_unicode(data$text),
+                     file = file, sep = "\n\n")
 }
+
