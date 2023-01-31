@@ -43,17 +43,17 @@ kindle_write_xlsx <- function(data, file, columns = NULL,
       tidyr::drop_na(.data$text)
   }
 
+  if (!is.null(title)) {
+    data <- data %>%
+      dplyr::filter(stringr::str_detect(.data$title, {{ title }}))
+  }
+
   if (distinct == TRUE) {
     data <- data %>%
       dplyr::group_by(.data$title, .data$begin) %>%
       dplyr::filter(dplyr::row_number() == dplyr::n()) %>%
       dplyr::ungroup() %>%
       dplyr::mutate(id = dplyr::row_number())
-  }
-
-  if (!is.null(title)) {
-    data <- data %>%
-      dplyr::filter(stringr::str_detect(.data$title, {{ title }}))
   }
 
   if (new_line == TRUE) {
