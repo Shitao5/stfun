@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">stfun</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,7 @@
 <span>  columns <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  distinct <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  drop_na <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  new_line <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  title <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -87,6 +88,11 @@ value will be retained; if <code>FALSE</code>, no records will be deleted.</p></
 <dt>drop_na</dt>
 <dd><p>Logical. If <code>TRUE</code>, drop rows where <code>text</code> column is <code>NA</code>; if <code>FALSE</code>,
 no records will be deleted.</p></dd>
+
+
+<dt>new_line</dt>
+<dd><p>Logical. If <code>TRUE</code>, <code> </code> will be replaced by <code>\n</code> which can create
+a new line.</p></dd>
 
 
 <dt>title</dt>
