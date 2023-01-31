@@ -10,6 +10,7 @@ kindle_write_xlsx(
   columns = NULL,
   distinct = TRUE,
   drop_na = TRUE,
+  new_line = TRUE,
   title = NULL
 )
 }
@@ -34,6 +35,9 @@ value will be retained; if \code{FALSE}, no records will be deleted.}
 
 \item{drop_na}{Logical. If \code{TRUE}, drop rows where \code{text} column is \code{NA}; if \code{FALSE},
 no records will be deleted.}
+
+\item{new_line}{Logical. If \code{TRUE}, \verb{ } will be replaced by \verb{\\n} which can create
+a new line.}
 
 \item{title}{String. Provide the \code{title} of the \code{data} you want to write out,
 with support for regular expressions. If \code{NULL}, all of records will be wrote out.}

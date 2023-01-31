@@ -18,6 +18,8 @@
 #'
 #' @param drop_na Logical. If `TRUE`, drop rows where `text` column is `NA`; if `FALSE`,
 #'  no records will be deleted.
+#' @param new_line Logical. If `TRUE`, ` ` will be replaced by `\n` which can create
+#' a new line.
 #'
 #' @return A excel file.
 #' @export
@@ -33,6 +35,7 @@
 kindle_write_xlsx <- function(data, file, columns = NULL,
                          distinct = TRUE,
                          drop_na = TRUE,
+                         new_line = TRUE,
                          title = NULL) {
 
   if (drop_na == TRUE) {
@@ -51,6 +54,11 @@ kindle_write_xlsx <- function(data, file, columns = NULL,
   if (!is.null(title)) {
     data <- data %>%
       dplyr::filter(stringr::str_detect(.data$title, {{ title }}))
+  }
+
+  if (new_line == TRUE) {
+    data <- data %>%
+      dplyr::mutate(text = stringr::str_replace_all(.data$text, " ", "\n"))
   }
 
   if (!is.null(columns)) {
@@ -95,7 +103,8 @@ kindle_write_md <- function(data, file, title = NULL,
     data <- data %>%
       dplyr::filter(stringr::str_detect(.data$title, {{ title }}))
   } else {
-    stop("`title` must be specified.")
+    warning("It is recommended that you add the `title` parameter,
+            otherwise all notes will be mixed together and difficult to distinguish.")
   }
 
   if (drop_na == TRUE) {
