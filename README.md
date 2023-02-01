@@ -15,5 +15,6 @@ in this package.
 ## Installation
 
 ``` r
+if (!require(remotes)) install.packages("remotes")
 remotes::install_github("Shitao5/stfun")
 ```

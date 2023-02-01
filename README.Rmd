@@ -24,5 +24,6 @@ There are many tedious things that come up in daily life, and I have written the
 ## Installation
 
 ```{r, eval=FALSE}
+if (!require(remotes)) install.packages("remotes")
 remotes::install_github("Shitao5/stfun")
 ```
