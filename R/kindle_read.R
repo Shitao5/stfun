@@ -32,6 +32,8 @@ kindle_read <- function(file) {
   dplyr::mutate(page = stringr::str_extract(.data$info, "(?<=\\u7b2c )\\d+"),
                 begin = stringr::str_extract(.data$info, "(?<=#)\\d+"),
                 end = stringr::str_extract(.data$info, "(?<=\\-)\\d+"),
+                dplyr::across(c(.data$page, .data$begin, .data$end), as.numeric),
+                title = factor(.data$title, levels = unique(.data$title)),
                 datetime = stringr::str_extract(.data$info, "(?<= )\\d+\\u5e74.*:\\d{2}"),
                 datetime = ifelse(stringr::str_detect(.data$datetime, "\\u4e0a\\u5348"),
                                   stringr::str_c(.data$datetime, " AM"),

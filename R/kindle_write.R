@@ -51,7 +51,14 @@ kindle_write_xlsx <- function(data, file, columns = NULL,
   if (distinct == TRUE) {
     data <- data %>%
       dplyr::group_by(.data$title, .data$begin) %>%
+      dplyr::arrange(.data$begin, .data$datetime, .by_group = TRUE) %>%
       dplyr::filter(dplyr::row_number() == dplyr::n()) %>%
+      dplyr::ungroup() %>%
+      dplyr::mutate(id = dplyr::row_number())
+  } else {
+    data <- data %>%
+      dplyr::group_by(.data$title, .data$begin) %>%
+      dplyr::arrange(.data$begin, .data$datetime, .by_group = TRUE) %>%
       dplyr::ungroup() %>%
       dplyr::mutate(id = dplyr::row_number())
   }
@@ -103,8 +110,7 @@ kindle_write_md <- function(data, file, title = NULL,
     data <- data %>%
       dplyr::filter(stringr::str_detect(.data$title, {{ title }}))
   } else {
-    warning("It is recommended that you add the `title` parameter,
-            otherwise all notes will be mixed together and difficult to distinguish.")
+    warning("It is recommended that you add the `title` parameter, otherwise all notes will be mixed together and difficult to distinguish.")
   }
 
   if (drop_na == TRUE) {
@@ -115,7 +121,14 @@ kindle_write_md <- function(data, file, title = NULL,
   if (distinct == TRUE) {
     data <- data %>%
       dplyr::group_by(.data$title, .data$begin) %>%
+      dplyr::arrange(.data$begin, .data$datetime, .by_group = TRUE) %>%
       dplyr::filter(dplyr::row_number() == dplyr::n()) %>%
+      dplyr::ungroup() %>%
+      dplyr::mutate(id = dplyr::row_number())
+  } else {
+    data <- data %>%
+      dplyr::group_by(.data$title, .data$begin) %>%
+      dplyr::arrange(.data$begin, .data$datetime, .by_group = TRUE) %>%
       dplyr::ungroup() %>%
       dplyr::mutate(id = dplyr::row_number())
   }
@@ -133,4 +146,3 @@ kindle_write_md <- function(data, file, title = NULL,
   readr::write_lines(stringi::stri_unescape_unicode(data$text),
                      file = file, sep = "\n\n")
 }
-
