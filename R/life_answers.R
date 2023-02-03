@@ -7,9 +7,10 @@
 #'
 #' @examples
 #' \dontrun{
-#' life_answer()
-#' life)answer(n = 2)
+#' life_answers()
+#' life_answers(n = 2)
 #' }
+#'
 #' @importFrom rlang .data
 #' @importFrom dplyr %>%
 life_answers <- function(n = 1) {

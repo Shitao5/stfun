@@ -17,7 +17,8 @@ The answers of your life
 }
 \examples{
 \dontrun{
-life_answer()
-life)answer(n = 2)
+life_answers()
+life_answers(n = 2)
 }
+
 }
