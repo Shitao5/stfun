@@ -7,7 +7,7 @@
 remove_tag()
 }
 \value{
-a piece of text to you Clipboard.
+a piece of text to your Clipboard.
 }
 \description{
 Read from the Clipboard, remove all \code{[[}, \verb{]]}
@@ -15,8 +15,10 @@ and \verb{#tag}, which is widely used in note taking tools like
 \emph{Roam Research} and write to Clipboard again.
 }
 \examples{
+\dontrun{
 Sys.setenv(CLIPR_ALLOW=TRUE)
 clipr::write_clip("A [[nice]] day. #happy", allow_non_interactive = TRUE)
 remove_tag()
 clipr::read_clip()
+}
 }

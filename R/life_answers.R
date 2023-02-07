@@ -15,7 +15,7 @@
 #' @importFrom dplyr %>%
 life_answers <- function(n = 1) {
   text <- answers %>%
-    dplyr::slice_sample(n = n) %>%
+    dplyr::slice_sample(n = n, replace = TRUE) %>%
     dplyr::pull() %>%
     stringi::stri_unescape_unicode()
 
