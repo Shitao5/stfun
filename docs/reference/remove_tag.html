@@ -14,7 +14,7 @@ Roam Research and write to Clipboard again."><meta property="og:image" content="
     
     <a class="navbar-brand me-2" href="../index.html">stfun</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,16 +61,17 @@ and <code>#tag</code>, which is widely used in note taking tools like
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>a piece of text to you Clipboard.</p>
+<p>a piece of text to your Clipboard.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>CLIPR_ALLOW<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>CLIPR_ALLOW<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">clipr</span><span class="fu">::</span><span class="fu"><a href="http://matthewlincoln.net/clipr/reference/write_clip.html" class="external-link">write_clip</a></span><span class="op">(</span><span class="st">"A [[nice]] day. #happy"</span>, allow_non_interactive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">remove_tag</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">clipr</span><span class="fu">::</span><span class="fu"><a href="http://matthewlincoln.net/clipr/reference/read_clip.html" class="external-link">read_clip</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "A nice day."</span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
