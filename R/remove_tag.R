@@ -5,7 +5,6 @@
 #' and `#tag`, which is widely used in note taking tools like
 #' *Roam Research* and write to Clipboard again.
 #'
-#' @usage remove_tag()
 #' @return a piece of text to your Clipboard.
 #' @export
 #'
@@ -13,11 +12,10 @@
 #' \dontrun{
 #' Sys.setenv(CLIPR_ALLOW=TRUE)
 #' clipr::write_clip("A [[nice]] day. #happy", allow_non_interactive = TRUE)
-#' remove_tag()
+#' clip_remove_tag()
 #' clipr::read_clip()
 #' }
-
-remove_tag <- function() {
+clip_remove_tag <- function() {
   clipr::read_clip() |>
     stringr::str_remove_all("\\[\\[") |>
     stringr::str_remove_all("\\]\\]") |>
@@ -31,12 +29,13 @@ remove_tag <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' Sys.setenv(CLIPR_ALLOW=TRUE)
 #' clipr::write_clip("hello1!", allow_non_interactive = TRUE)
-#' insert_spaces()
+#' clip_insert_spaces()
 #' clipr::read_clip()
 #' }
-insert_spaces <- function() {
+clip_insert_spaces <- function() {
   clipr::read_clip() |>
     stringr::str_replace_all(" *(\\d+) *", " \\1 ") |>
     stringr::str_replace_all("(\\d+) ([\\p{P}])", "\\1\\2") |>
@@ -55,12 +54,13 @@ insert_spaces <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' Sys.setenv(CLIPR_ALLOW=TRUE)
 #' clipr::write_clip("Sentences-containing-Chinese-inverted-commas.", allow_non_interactive = TRUE)
-#' convert_commas()
+#' clip_convert_commas()
 #' clipr::read_clip()
 #' }
-convert_commas <- function(reverse = FALSE) {
+clip_convert_commas <- function(reverse = FALSE) {
   if (reverse == FALSE) {
     clipr::read_clip() |>
       stringr::str_replace_all("\\u201c", "\\u300c") |>
