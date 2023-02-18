@@ -19,13 +19,16 @@
     <loc>https://shitao5.github.io/stfun/reference/blog_name.html</loc>
   </url>
   <url>
-    <loc>https://shitao5.github.io/stfun/reference/convert_commas.html</loc>
+    <loc>https://shitao5.github.io/stfun/reference/clip_convert_commas.html</loc>
+  </url>
+  <url>
+    <loc>https://shitao5.github.io/stfun/reference/clip_insert_spaces.html</loc>
+  </url>
+  <url>
+    <loc>https://shitao5.github.io/stfun/reference/clip_remove_tag.html</loc>
   </url>
   <url>
     <loc>https://shitao5.github.io/stfun/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shitao5.github.io/stfun/reference/insert_spaces.html</loc>
   </url>
   <url>
     <loc>https://shitao5.github.io/stfun/reference/kindle_clean.html</loc>
@@ -41,8 +44,5 @@
   </url>
   <url>
     <loc>https://shitao5.github.io/stfun/reference/life_answers.html</loc>
-  </url>
-  <url>
-    <loc>https://shitao5.github.io/stfun/reference/remove_tag.html</loc>
   </url>
 </urlset>
