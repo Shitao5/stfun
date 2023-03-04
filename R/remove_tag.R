@@ -12,15 +12,16 @@
 #' \dontrun{
 #' Sys.setenv(CLIPR_ALLOW=TRUE)
 #' clipr::write_clip("A [[nice]] day. #happy", allow_non_interactive = TRUE)
-#' clip_remove_tag()
+#' clip_remove_tags()
 #' clipr::read_clip()
 #' }
-clip_remove_tag <- function() {
+clip_remove_tags <- function() {
   clipr::read_clip() |>
     stringr::str_remove_all("\\[\\[") |>
     stringr::str_remove_all("\\]\\]") |>
     stringr::str_remove_all(" #.*") |>
     writeLines(con = "clipboard", sep = "")
+  cli::cli_alert_success("Done!")
 }
 
 #' Insert spaces between numbers and Chinese
@@ -43,6 +44,7 @@ clip_insert_spaces <- function() {
     stringr::str_replace_all("(\\d+\\%)", "\\1 ") |>
     stringr::str_remove_all("^ +") |>
     writeLines(con = "clipboard", sep = "")
+  cli::cli_alert_success("Done!")
 }
 
 
@@ -72,4 +74,26 @@ clip_convert_commas <- function(reverse = FALSE) {
       stringr::str_replace_all("\\u300d", "\\u201d") |>
       writeLines(con = "clipboard", sep = "")
   }
+  cli::cli_alert_success("Done!")
+}
+
+
+#' Remove spaces between Chinese characters and between Chinese characters and punctuation
+#'
+#' @return a piece of text to you Clipboard.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' Sys.setenv(CLIPR_ALLOW=TRUE)
+#' clipr::write_clip("\\u4f60 \\u597d\\u554a \\uff01", allow_non_interactive = TRUE)
+#' clip_remove_spaces()
+#' clipr::read_clip()
+#' }
+clip_remove_spaces <- function() {
+  clipr::read_clip() |>
+    stringr::str_remove_all("(?<=[\\p{Han}\\p{P}])\\s+(?=[\\p{Han}\\p{P}])") |>
+    stringr::str_remove_all("(?<=[\\p{P}])\\s+$") |>
+    writeLines(con = "clipboard", sep = "")
+  cli::cli_alert_success("Done!")
 }
