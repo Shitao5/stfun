@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">stfun</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.11</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cut_value</span><span class="op">(</span><span class="va">x</span>, <span class="va">breaks</span>, <span class="va">values</span>, right <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cut_value</span><span class="op">(</span><span class="va">x</span>, <span class="va">breaks</span>, <span class="va">values</span>, right <span class="op">=</span> <span class="cn">TRUE</span>, if_na <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -67,6 +67,10 @@
 
 <dt>right</dt>
 <dd><p>Logical, indicating if the intervals should be closed on the right (and open on the left) or vice versa.</p></dd>
+
+
+<dt>if_na</dt>
+<dd><p>A value of the same type as <code>values</code> used to determine the value returned when x is NA.</p></dd>
 
 </dl></div>
     <div class="section level2">
