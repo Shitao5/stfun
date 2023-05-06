@@ -4,7 +4,7 @@
 \alias{cut_value}
 \title{Calculate the value of x based on the cut points and corresponding segment values}
 \usage{
-cut_value(x, breaks, values, right = TRUE)
+cut_value(x, breaks, values, right = TRUE, if_na = NA)
 }
 \arguments{
 \item{x}{A numeric value.}
@@ -14,6 +14,8 @@ cut_value(x, breaks, values, right = TRUE)
 \item{values}{A vector indicating the return values of each segment, its length must be equal to \code{breaks} + 1.}
 
 \item{right}{Logical, indicating if the intervals should be closed on the right (and open on the left) or vice versa.}
+
+\item{if_na}{A value of the same type as \code{values} used to determine the value returned when x is NA.}
 }
 \value{
 A value from \code{values}.
