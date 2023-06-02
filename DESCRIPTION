@@ -16,6 +16,8 @@ Imports:
     cli,
     clipr,
     dplyr,
+    httr,
+    jsonlite,
     lubridate,
     readr,
     rlang,
