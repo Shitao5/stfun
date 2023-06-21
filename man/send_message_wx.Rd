@@ -2,7 +2,7 @@
 % Please edit documentation in R/send_message.R
 \name{send_message_wx}
 \alias{send_message_wx}
-\title{Send Message to Enterprise WeChat}
+\title{Send a message to Enterprise WeChat}
 \usage{
 send_message_wx(
   message,

@@ -72,7 +72,7 @@ send_message_ding <- function(message, include_timestamp = FALSE, at_mobiles = N
 }
 
 
-#' Send Message to Enterprise WeChat
+#' Send a message to Enterprise WeChat
 #'
 #' This function sends a message to an Enterprise WeChat robot using the provided webhook URL.
 #'
