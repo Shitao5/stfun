@@ -4,14 +4,14 @@
 #'
 #' @param now The current progress of learning.
 #' @param total The total amount of learning materials.
+#' @param stop Boolean indicating whether learning is paused.
 #'
 #' @return A string indicating the learning progress.
 #' @examples
 #' progress(50, 100)
 #'
 #' @export
-progress <- function(now, total) {
-
+progress <- function(now, total, stop = FALSE) {
   emoji <- c(
     "\U0001f600", # smile
     "\U0001f973", # party face
@@ -22,9 +22,16 @@ progress <- function(now, total) {
     "\U0001f38a"  # confetti ball
   )
 
-  if (now >= total) {
+  if (stop) {
     paste0(
-      "Learning Progress: ",
+      "Learning Progress: Paused, current progress ",
+      round(now / total * 100, 2),
+      "%.",
+      "\u23F1"
+    )
+  } else if (now >= total) {
+    paste0(
+      "Learning Progress: Completed. ",
       round(now / total * 100, 2),
       "%.",
       sample(emoji, 1)
@@ -37,5 +44,3 @@ progress <- function(now, total) {
     )
   }
 }
-
-
