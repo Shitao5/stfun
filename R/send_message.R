@@ -30,7 +30,7 @@ send_message_ding <- function(message, include_timestamp = FALSE, at_mobiles = N
   # If include_timestamp is TRUE, add the current timestamp to the message
   if (include_timestamp) {
     timestamp_str <- format(Sys.time(), "%Y-%m-%d %H:%M:%S")
-    message <- paste0("Current timestamp:", timestamp_str, "\n", message)
+    message <- paste0("Current timestamp: ", timestamp_str, "\n", message)
   }
 
   # Construct the mentioned users object
@@ -102,7 +102,7 @@ send_message_wx <- function(message, include_timestamp = FALSE, at_mobiles = NUL
   # If include_timestamp is TRUE, add the current timestamp to the message
   if (include_timestamp) {
     timestamp_str <- format(Sys.time(), "%Y-%m-%d %H:%M:%S")
-    message <- paste0("Current timestamp:", timestamp_str, "\n", message)
+    message <- paste0("Current timestamp: ", timestamp_str, "\n", message)
   }
 
   # Construct the mentioned_list and mentioned_mobile_list as lists
