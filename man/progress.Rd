@@ -4,12 +4,14 @@
 \alias{progress}
 \title{Learning Progress}
 \usage{
-progress(now, total)
+progress(now, total, stop = FALSE)
 }
 \arguments{
 \item{now}{The current progress of learning.}
 
 \item{total}{The total amount of learning materials.}
+
+\item{stop}{Boolean indicating whether learning is paused.}
 }
 \value{
 A string indicating the learning progress.
