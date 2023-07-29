@@ -24,16 +24,14 @@ progress <- function(now, total, stop = FALSE) {
 
   if (stop) {
     paste0(
-      "Learning Progress: Paused, current progress ",
+      "Learning Progress: Paused. Current progress ",
       round(now / total * 100, 2),
       "%.",
       "\u23F1"
     )
   } else if (now >= total) {
     paste0(
-      "Learning Progress: Completed. ",
-      round(now / total * 100, 2),
-      "%.",
+      "Learning Progress: Completed.",
       sample(emoji, 1)
     )
   } else {
