@@ -1,3 +1,7 @@
+# stfun 0.1.18
+
+-  Improved the `progress()` function to no longer display the task progress as 100% when the task is completed.
+
 # stfun 0.1.17
 
 - Add the `quote_text()` function to wrap a column of strings with double quotes and commas so that they can be used as input for other functions (e.g., `c()`).
