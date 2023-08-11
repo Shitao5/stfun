@@ -1,3 +1,7 @@
+# stfun 0.1.19
+
+- Modified the function name from `quote_text()` to `format_input()` and introduced two additional parameters: `type`, which determines whether quotation marks are included, and `sep`, which governs the formatting of the output.
+
 # stfun 0.1.18
 
 -  Improved the `progress()` function to no longer display the task progress as 100% when the task is completed.
