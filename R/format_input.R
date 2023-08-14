@@ -21,15 +21,15 @@
 #'
 #' @export
 format_input <- function(con = "clipboard", type = "text", sep = "\n") {
-  text_file_content <- readLines(con)
+  text_file_content <- readLines(con, warn = FALSE)
 
   processed_content <- switch(type,
-                              text = paste0('"', text_file_content[nchar(text_file_content) > 0], '",'),
-                              other = paste0(text_file_content[nchar(text_file_content) > 0], ",")
+                              text = paste0('"', text_file_content[nchar(text_file_content) > 0], '", '),
+                              other = paste0(text_file_content[nchar(text_file_content) > 0], ", ")
   )
 
   processed_content[length(processed_content)] <-
-    gsub(",$", "", processed_content[length(processed_content)])
+    gsub(", $", "", processed_content[length(processed_content)])
 
   cat(processed_content, sep = sep)
 }
