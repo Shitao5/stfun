@@ -1,3 +1,7 @@
+# stfun 0.1.20
+
+- Added `warn = FALSE` to `readLines(con)` to remove warning when using `format_input()`.
+
 # stfun 0.1.19
 
 - Modified the function name from `quote_text()` to `format_input()` and introduced two additional parameters: `type`, which determines whether quotation marks are included, and `sep`, which governs the formatting of the output.
