@@ -1,3 +1,7 @@
+# stfun 0.1.22
+
+- 对 `read_es_query()` 中 tidyselece 部分进行修改以通过 R CMD check。
+
 # stfun 0.1.21
 
 - Added `read_es_query()`, which facilitates the reading and tidying of Elasticsearch query results into a tibble.
