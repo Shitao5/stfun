@@ -1,3 +1,7 @@
+# stfun 0.1.21
+
+- Added `read_es_query()`, which facilitates the reading and tidying of Elasticsearch query results into a tibble.
+
 # stfun 0.1.20
 
 - Added `warn = FALSE` to `readLines(con)` to remove warning when using `format_input()`.
