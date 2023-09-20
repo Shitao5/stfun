@@ -23,6 +23,6 @@ read_es_query <- function(json_file) {
   json = jsonlite::fromJSON(json_file)
   json$hits$hits %>%
     as_tibble() %>%
-    unnest_wider(`_source`) %>%
-    select(-c(`_index`, `_id`, `_score`))
+    unnest_wider(any_of("_source")) %>%
+    select(-all_of(c("_index", "_id", "_score")))
 }
